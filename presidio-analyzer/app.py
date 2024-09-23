@@ -6,7 +6,7 @@ import os
 from logging.config import fileConfig
 from pathlib import Path
 from typing import Tuple
-
+import cld3
 from flask import Flask, Response, jsonify, request
 from presidio_analyzer import AnalyzerEngine, AnalyzerEngineProvider, AnalyzerRequest
 from werkzeug.exceptions import HTTPException
@@ -63,7 +63,7 @@ class Server:
                     raise Exception("No text provided")
 
                 if not req_data.language:
-                    raise Exception("No language provided")
+                    req_data.language = cld3.get_language(req_data.text).language
 
                 recognizer_result_list = self.engine.analyze(
                     text=req_data.text,

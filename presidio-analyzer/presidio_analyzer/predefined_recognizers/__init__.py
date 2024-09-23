@@ -43,6 +43,8 @@ from .us_driver_license_recognizer import UsLicenseRecognizer
 from .us_itin_recognizer import UsItinRecognizer
 from .us_passport_recognizer import UsPassportRecognizer
 from .us_ssn_recognizer import UsSsnRecognizer
+from .aig_email_recognizer import AigEmailRecognizer
+from .aig_url_recognizer import AigUrlRecognizer
 
 PREDEFINED_RECOGNIZERS = [
     "PhoneRecognizer",
@@ -54,6 +56,8 @@ PREDEFINED_RECOGNIZERS = [
     "IbanRecognizer",
     "MedicalLicenseRecognizer",
     "UrlRecognizer",
+    "AigEmailRecognizer",
+    "AigUrlRecognizer",
 ]
 
 NLP_RECOGNIZERS = {
@@ -104,4 +108,6 @@ __all__ = [
     "InPassportRecognizer",
     "FiPersonalIdentityCodeRecognizer",
     "EsNieRecognizer",
+    "AigEmailRecognizer",
+    "AigUrlRecognizer",
 ]
